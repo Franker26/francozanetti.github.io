@@ -6,31 +6,34 @@
     <title>Mi Página Personal</title>
     <style>
         body {
-            background-color: #565551; /* Fondo azul */
+            background-color: #007bff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            overflow: hidden; /* Ocultar cualquier desbordamiento */
         }
 
         .label-container {
-            background-color: rgb(143, 206, 107); /* Fondo blanco */
-            color: black; /* Texto negro */
+            position: relative;
+            background-color: white;
+            color: black;
             padding: 20px 40px;
-            border-radius: 15px; /* Bordes redondeados */
+            border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             font-size: 24px;
+            z-index: 1; /* Asegura que el texto esté por encima de las esferas */
         }
 
         .linkedin-button {
-            background-color: #0e76a8; /* Color de fondo de LinkedIn */
-            color: white; /* Color del texto */
+            background-color: #0e76a8;
+            color: white;
             padding: 10px 20px;
             border: none;
-            border-radius: 5px; /* Bordes redondeados */
+            border-radius: 5px;
             font-size: 16px;
             margin-top: 20px;
             cursor: pointer;
@@ -38,11 +41,79 @@
         }
 
         .linkedin-button:hover {
-            background-color: #005f86; /* Color de fondo cuando se pasa el mouse por encima */
+            background-color: #005f86;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px; /* Tamaño del contenedor de la órbita */
+            height: 300px;
+            border-radius: 50%;
+            animation: rotate 20s infinite linear;
+        }
+
+        .sphere {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: orbit 5s infinite linear;
+        }
+
+        .sphere:nth-child(1) {
+            top: 0;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .sphere:nth-child(2) {
+            top: 50%;
+            left: 0;
+            animation-delay: -4s;
+        }
+
+        .sphere:nth-child(3) {
+            top: 100%;
+            left: 50%;
+            animation-delay: -6s;
+        }
+
+        .sphere:nth-child(4) {
+            top: 50%;
+            left: 100%;
+            animation-delay: -8s;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translate(150px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translate(150px) rotate(-360deg);
+            }
         }
     </style>
 </head>
 <body>
+    <div class="orbit">
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+    </div>
     <div class="label-container">
         Franco Zanetti
         <br>
