@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #002244;
+            background-color: #000;
             overflow: hidden;
         }
 
@@ -29,58 +29,33 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            border: 2px solid transparent;
-            animation: rotate 10s linear infinite;
-        }
-
-        .orbit-1 {
-            width: 200px;
-            height: 200px;
-            animation-duration: 15s;
-        }
-
-        .orbit-2 {
-            width: 300px;
-            height: 300px;
-            animation-duration: 10s;
-        }
-
-        .orbit-3 {
             width: 400px;
             height: 400px;
-            animation-duration: 20s;
+            animation: orbit 12s infinite linear;
+            transform-origin: center center;
         }
 
-        .sphere {
+        .orbit .sphere {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
-            transform: translate(-50%, -50%);
-            animation: scale 5s ease-in-out infinite alternate;
+            transform: scale(0.5);
+            animation: scale 6s infinite ease-in-out;
         }
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg) translate(-50%, -50%);
-            }
-            to {
-                transform: rotate(360deg) translate(-50%, -50%);
-            }
+        .sphere-1 { width: 10px; height: 10px; top: 0; left: 50%; transform: translate(-50%, -50%); }
+        .sphere-2 { width: 15px; height: 15px; top: 50%; left: 0; transform: translate(-50%, -50%); }
+        .sphere-3 { width: 20px; height: 20px; top: 100%; left: 50%; transform: translate(-50%, -50%); }
+        .sphere-4 { width: 25px; height: 25px; top: 50%; left: 100%; transform: translate(-50%, -50%); }
+
+        @keyframes orbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @keyframes scale {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(2);
-            }
+            0%, 100% { transform: scale(0.5); }
+            50% { transform: scale(1.2); }
         }
 
         .version-indicator {
@@ -95,14 +70,12 @@
 <body>
 
     <div class="label">Franco Zanetti</div>
-    <div class="orbit orbit-1">
-        <div class="sphere"></div>
-    </div>
-    <div class="orbit orbit-2">
-        <div class="sphere"></div>
-    </div>
-    <div class="orbit orbit-3">
-        <div class="sphere"></div>
+
+    <div class="orbit">
+        <div class="sphere sphere-1"></div>
+        <div class="sphere sphere-2"></div>
+        <div class="sphere sphere-3"></div>
+        <div class="sphere sphere-4"></div>
     </div>
 
     <div class="version-indicator">v0.1.2</div>
