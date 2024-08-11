@@ -20,17 +20,17 @@
 
 title: Hola
 email: Francozanetti@live.com
-description: >- # this means to ignore newlines until "baseurl:"
+#description: >- # this means to ignore newlines until "baseurl:"
  Texto de prueba 1 2 3 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: Franco.zanetti
-github_username:  Franco.zanetti
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: Franco.zanetti
+#github_username:  Franco.zanetti
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+#theme: minima
+#plugins:
+#  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
