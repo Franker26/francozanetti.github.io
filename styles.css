@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3efd3;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.orbit {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.linkedin-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.sphere {
+    position: absolute;
+    background-color: #e4d45a;
+    border-radius: 100%;
+    animation: orbit 10s infinite linear, resize 5s infinite linear;
+}
+
+.sphere.s1 {
+    animation: orbit1 8s infinite linear, resize 4s infinite alternate;
+}
+
+.sphere.s2 {
+    animation: orbit2 10s infinite linear, resize 6s infinite alternate;
+}
+
+.sphere.s3 {
+    animation: orbit3 12s infinite linear, resize 5s infinite alternate;
+}
+
+.sphere.s4 {
+    animation: orbit4 14s infinite linear, resize 7s infinite alternate;
+}
+
+@keyframes orbit1 {
+    0% {
+        transform: rotate(0deg) translateX(170px) rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) translateX(100px) rotate(-180deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(170px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit2 {
+    0% {
+        transform: rotate(0deg) translateX(230px) rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) translateX(140px) rotate(-180deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(230px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: rotate(0deg) translateX(350px) rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) translateX(100px) rotate(-180deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(350px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit4 {
+    0% {
+        transform: rotate(0deg) translateX(240px) rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) translateX(160px) rotate(-180deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(240px) rotate(-360deg);
+    }
+}
+
+@keyframes resize {
+    0%, 100% {
+        width: 20px;
+        height: 20px;
+    }
+    50% {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.version-indicator {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #272727;
+    font-size: 12px;
+}
