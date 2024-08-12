@@ -4,24 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco Zanetti - Mi Portafolio</title>
+    <meta name="description" content="Portafolio personal de Franco Zanetti, Desarrollador Web y Programador.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="orbit">
-        <div class="centered">
-            <img src="perfil.jpeg" alt="Franco Zanetti" class="profile-pic">
-            <h1>Franco Zanetti</h1>
-            <a href="https://www.linkedin.com/in/franco-zanetti-952aa4283/" class="linkedin-button">Visita mi LinkedIn</a>
+    <div class="container">
+        <!-- Contenedor de órbitas superiores izquierdas -->
+        <div class="orbit-container top-left">
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
         </div>
-        <div class="sphere s1"></div>
-        <div class="sphere s2"></div>
-        <div class="sphere s3"></div>
-        <div class="sphere s4"></div>
-        <div class="sphere s5"></div>
+
+        <!-- Contenedor de órbitas inferiores derechas -->
+        <div class="orbit-container bottom-right">
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Foto de perfil -->
+            <img src="perfil.jpeg" alt="Franco Zanetti" class="profile-pic">
+            <!-- Nombre y dedicación -->
+            <h2 class="name">Franco Zanetti</h2>
+            <p class="title">Estudiante de Ingeniería</p>
+
+            <!-- Botones de redes sociales -->
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/in/franco-zanetti-952aa4283/" class="social-button linkedin-button">
+                    <img src="/Users/francozanetti/francozanetti.github.io/Logotipo-Linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/Franker26" class="social-button github-button">
+                    <img src="/Users/francozanetti/francozanetti.github.io/Logotipo-Github.webp" alt="GitHub">
+                </a>
+                <a href="#" class="social-button instagram-button">
+                    <img src="/Users/francozanetti/francozanetti.github.io/Logotipo-Instagram.png" alt="Instagram">
+                </a>
+            </div>
+
+            <!-- Título "INFO" -->
+            <div class="info-title">INFO</div>
+
+            <!-- Información personal -->
+            <ul class="info-list">
+                <li>
+                    <span class="info-topic">Correo electrónico</span>
+                    <p class="info-detail">francozanetti@live.com</p>
+                </li>
+                <li>
+                    <span class="info-topic">Nacionalidad</span>
+                    <p class="info-detail">Argentina</p>
+                </li>
+                <li>
+                    <span class="info-topic">Fecha de nacimiento</span>
+                    <p class="info-detail">26 de Noviembre, 2003</p>
+                </li>
+            </ul>
+
+            <!-- Habilidades -->
+            <h4 class="skills-title">HABILIDADES</h4>
+            <ul class="skills-list">
+                <li>
+                    <span class="skill-topic">Automatización de Procesos</span>
+                    <p class="skill-detail">Experto en la automatización de flujos de trabajo y procesos repetitivos, mejorando la eficiencia en sistemas ERP y otras plataformas.</p>
+                </li>
+                <li>
+                    <span class="skill-topic">Análisis de Datos</span>
+                    <p class="skill-detail">Sólida experiencia en el análisis y manipulación de datos utilizando Python, Excel y sistemas PIM, aplicados a la optimización de catálogos y sistemas de información.</p>
+                </li>
+                <li>
+                    <span class="skill-topic">Desarrollo y Gestión de Proyectos</span>
+                    <p class="skill-detail">Capacidad para liderar y gestionar proyectos complejos, incluyendo la creación y adaptación de entornos específicos para usuarios y la implementación de soluciones tecnológicas innovadoras.</p>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Sección del contenido principal -->
+        <main class="main-content">
+            <section class="intro">
+                <h1>👋 ¡Hola, mundo!</h1>
+                <p>Contenido extendido para generar un scroll en la página...</p>
+                <!-- Agregar más contenido aquí para simular una página más larga -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Sed commodo volutpat tortor, id tincidunt urna laoreet vel. Nam consectetur ipsum eu tortor facilisis, in condimentum ligula fermentum. Proin ornare feugiat orci, eget vulputate augue tempor ut. Quisque euismod hendrerit ullamcorper.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Sed commodo volutpat tortor, id tincidunt urna laoreet vel. Nam consectetur ipsum eu tortor facilisis, in condimentum ligula fermentum. Proin ornare feugiat orci, eget vulputate augue tempor ut. Quisque euismod hendrerit ullamcorper.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Sed commodo volutpat tortor, id tincidunt urna laoreet vel. Nam consectetur ipsum eu tortor facilisis, in condimentum ligula fermentum. Proin ornare feugiat orci, eget vulputate augue tempor ut. Quisque euismod hendrerit ullamcorper.</p>
+            </section>
+        </main>
     </div>
+
     <div class="version-indicator">
-        v0.1.2
+        Beta v0.2.0
     </div>
+
 </body>
 </html>

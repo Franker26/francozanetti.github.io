@@ -1,119 +1,342 @@
+/* Estilo general */
 body {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #87CEEB;
+    padding: 0;
     font-family: 'Open Sans', sans-serif;
+    background-color: #1e2a38;
+    color: #333;
+}
+
+/* Contenedor principal que organiza la estructura */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Necesario para posicionar las órbitas */
+}
+
+/* Orbitas */
+.orbit-container {
+    position: absolute;
+    pointer-events: none; /* Evitar que interfiera con la interacción del usuario */
+    z-index: -1; /* Colocar las órbitas detrás del contenido */
 }
 
 .orbit {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Color blanco translúcido para las órbitas */
+    transform-origin: center;
+    overflow: visible;
 }
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: white;
+/* Orbitas superiores izquierdas */
+.orbit-container.top-left {
+    top: -50px;
+    left: -50px;
+    width: 600px;
+    height: 600px;
+}
+
+.orbit-container.top-left .orbit:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+}
+
+.orbit-container.top-left .orbit:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    top: -50px;
+    left: -50px;
+}
+
+.orbit-container.top-left .orbit:nth-child(3) {
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    left: -100px;
+}
+
+.orbit-container.top-left .orbit:nth-child(4) {
+    width: 600px;
+    height: 600px;
+    top: -150px;
+    left: -150px;
+}
+
+/* Orbitas inferiores derechas */
+.orbit-container.bottom-right {
+    bottom: -50px;
+    right: -50px;
+    width: 1200px;
+    height: 1200px;
+}
+
+.orbit-container.bottom-right .orbit:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    bottom: 0;
+    right: 0;
+}
+
+.orbit-container.bottom-right .orbit:nth-child(2) {
+    width: 600px;
+    height: 600px;
+    bottom: -100px;
+    right: -100px;
+}
+
+.orbit-container.bottom-right .orbit:nth-child(3) {
+    width: 800px;
+    height: 800px;
+    bottom: -200px;
+    right: -200px;
+}
+
+.orbit-container.bottom-right .orbit:nth-child(4) {
+    width: 1000px;
+    height: 1000px;
+    bottom: -300px;
+    right: -300px;
+}
+
+.orbit-container.bottom-right .orbit:nth-child(5) {
+    width: 1200px;
+    height: 1200px;
+    bottom: -400px;
+    right: -400px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: #2b3e50; /* Fondo oscuro para el sidebar */
+    color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    text-align: center;
+    position: relative; /* Cambiado para permitir que se desplace */
+    top: 0; /* Inicialmente alineado con la parte superior */
+    align-self: flex-start;
+    z-index: 1; /* Asegura que el contenido esté por encima de las órbitas */
 }
 
+/* Estilo de la foto de perfil */
 .profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid white;
-    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Hacer la imagen redonda */
+    border: 5px solid #fff;
+    margin-bottom: 10px; /* Espacio entre la imagen y el nombre */
 }
 
-.linkedin-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0077b5;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
+/* Estilo del nombre */
+.name {
+    font-size: 20px;
+    font-weight: 400; /* Trazo más fino */
+    margin: 0; /* Eliminar márgenes para acercarlo a la dedicación */
+    color: #fff;
+}
+
+/* Estilo de la dedicación */
+.title {
     font-size: 16px;
+    font-weight: 300; /* Mantener un trazo delgado */
+    color: #ccc; /* Color gris claro para diferenciarlo */
+    margin-top: 2px; /* Espacio mínimo con el nombre */
+    margin-bottom: 20px; /* Espacio con la siguiente sección */
 }
 
-.sphere {
-    position: absolute;
-    border-radius: 50%;
-    background-color: #ff6f61;
-    animation: orbit 10s infinite linear;
+/* Botones de redes sociales */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 17px; /* Espaciado entre los botones */
+    margin-bottom: 20px; /* Espacio entre los botones y la siguiente sección */
 }
 
-.s1 {
-    width: 20px;
-    height: 20px;
-    background-color: #ff6f61;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation-duration: 5s;
+.social-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #0077b5; /* Color de fondo por defecto (LinkedIn) */
+    border-radius: 8px; /* Bordes redondeados */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
 }
 
-.s2 {
-    width: 15px;
-    height: 15px;
-    background-color: #ffb74d;
-    top: 25%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    animation-duration: 7s;
+.social-button img {
+    width: 24px;
+    height: 24px;
+    margin-top: 8px; /* Centra el logo verticalmente */
 }
 
-.s3 {
-    width: 25px;
-    height: 25px;
-    background-color: #81c784;
-    top: 75%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    animation-duration: 6s;
+/* Específicos de cada red social */
+.linkedin-button {
+    background-color: #0077b5; /* Color para LinkedIn */
 }
 
-.s4 {
-    width: 10px;
-    height: 10px;
-    background-color: #64b5f6;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    animation-duration: 4s;
+.github-button {
+    background-color: #333; /* Color para GitHub */
 }
 
-.s5 {
-    width: 30px;
-    height: 30px;
-    background-color: #9575cd;
-    top: 10%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    animation-duration: 8s;
+.instagram-button {
+    background-color: #e4405f; /* Color para Instagram */
 }
 
-@keyframes orbit {
-    0% {
-        transform: rotate(0deg) translateX(100px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(100px) rotate(-360deg);
-    }
+/* Hover effects para los botones */
+.social-button:hover {
+    background-color: #005582; /* Color ligeramente más oscuro en hover (LinkedIn) */
 }
 
-.version-indicator {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+.github-button:hover {
+    background-color: #555; /* Color ligeramente más claro en hover (GitHub) */
+}
+
+.instagram-button:hover {
+    background-color: #c13584; /* Color ligeramente más claro en hover (Instagram) */
+}
+
+/* Estilo del título "INFO" */
+.info-title {
+    font-size: 18px;
+    font-weight: 600; /* Resaltar el título "INFO" */
+    margin: 20px 0 10px;
+    text-align: left; /* Alinear a la izquierda */
+}
+
+/* Estilo de la lista de información personal */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.info-list li {
+    margin-bottom: 15px; /* Espacio entre cada item de la lista */
+}
+
+/* Estilo de los tópicos (Correo electrónico, Nacionalidad, etc.) */
+.info-topic {
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    font-weight: 300; /* Trazo muy fino */
+    color: #ccc; /* Color gris claro */
+    display: block;
+    margin-bottom: 5px; /* Espacio pequeño con la información */
+}
+
+/* Estilo de la información detallada */
+.info-detail {
     font-size: 14px;
-    color: #ffffff;
+    font-weight: 400;
+    color: #fff; /* Color blanco */
+    margin: 0;
+}
+
+/* Estilo del título "HABILIDADES" */
+.skills-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-align: left; /* Alinear a la izquierda */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    margin: 30px 0 15px; /* Aumentar el margen superior para crear espacio con la fecha de nacimiento */
+}
+
+/* Estilo de la lista de habilidades */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Eliminar margen superior de la lista */
+    text-align: left; /* Alinear a la izquierda */
+}
+
+.skills-list li {
+    margin-bottom: 20px; /* Espacio entre cada habilidad */
+}
+
+/* Estilo de los tópicos de habilidades */
+.skill-topic {
+    font-size: 14px;
+    font-weight: 600; /* Trazo más firme para el título de la habilidad */
+    color: #fff; /* Color blanco */
+    display: block;
+    margin-bottom: 5px; /* Espacio pequeño con la descripción */
+}
+
+/* Estilo de la descripción de cada habilidad */
+.skill-detail {
+    font-size: 13px;
+    font-weight: 300; /* Trazo delgado para la descripción */
+    color: #ccc; /* Color gris claro */
+    margin: 0;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    margin-left: 15px; /* Separar del sidebar por 15px */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    min-height: 150vh; /* Aumentar la altura para simular más contenido */
+}
+
+/* Introducción y secciones de experiencia */
+.intro, .experience {
+    margin-bottom: 40px;
+}
+
+.intro h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.experience h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.job h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.job p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Indicador de versión */
+.version-indicator {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 10px; /* A 10px del borde inferior */
+    left: 10px; /* A 10px del borde izquierdo */
+    font-size: 12px;
+    color: #ccc; /* Color gris claro */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    padding: 5px 10px;
+    border-radius: 5px;
 }
