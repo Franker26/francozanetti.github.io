@@ -4,139 +4,104 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e3efd3;
-    overflow: hidden;
+    background-color: #7EC8E3;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
 }
 
 .orbit {
     position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     background-color: white;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    z-index: 2;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .profile-pic {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 3px solid white;
-    margin-bottom: 15px;
+    border: 4px solid white;
+    margin-bottom: 10px;
 }
 
 h1 {
     font-size: 24px;
+    color: #333;
     margin: 10px 0;
 }
 
 .linkedin-button {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 18px;
+    background-color: #0077B5;
     color: white;
-    background-color: #007bff;
     text-decoration: none;
-    border-radius: 10px;
-    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.linkedin-button:hover {
+    background-color: #005582;
 }
 
 .sphere {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     position: absolute;
-    background-color: #e4d45a;
-    border-radius: 100%;
-    animation: orbit 10s infinite linear, resize 5s infinite linear;
+    top: 50%;
+    left: 50%;
+    background-color: #FF5733;
+    animation: orbit 10s infinite linear, grow-shrink 5s infinite alternate ease-in-out;
 }
 
-.sphere.s1 {
-    animation: orbit1 8s infinite linear, resize 4s infinite alternate;
+.s1 {
+    background-color: #FF5733; /* Rojo */
+    animation-duration: 8s;
 }
 
-.sphere.s2 {
-    animation: orbit2 10s infinite linear, resize 6s infinite alternate;
+.s2 {
+    background-color: #33FF57; /* Verde */
+    animation-duration: 6s;
 }
 
-.sphere.s3 {
-    animation: orbit3 12s infinite linear, resize 5s infinite alternate;
+.s3 {
+    background-color: #3357FF; /* Azul */
+    animation-duration: 4s;
 }
 
-.sphere.s4 {
-    animation: orbit4 14s infinite linear, resize 7s infinite alternate;
+.s4 {
+    background-color: #FF33FF; /* Rosa */
+    animation-duration: 10s;
 }
 
-@keyframes orbit1 {
-    0% {
-        transform: rotate(0deg) translateX(170px) rotate(0deg);
-    }
-    50% {
-        transform: rotate(180deg) translateX(100px) rotate(-180deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(170px) rotate(-360deg);
-    }
+@keyframes orbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(150px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
-@keyframes orbit2 {
-    0% {
-        transform: rotate(0deg) translateX(230px) rotate(0deg);
-    }
-    50% {
-        transform: rotate(180deg) translateX(140px) rotate(-180deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(230px) rotate(-360deg);
-    }
-}
-
-@keyframes orbit3 {
-    0% {
-        transform: rotate(0deg) translateX(350px) rotate(0deg);
-    }
-    50% {
-        transform: rotate(180deg) translateX(100px) rotate(-180deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(350px) rotate(-360deg);
-    }
-}
-
-@keyframes orbit4 {
-    0% {
-        transform: rotate(0deg) translateX(240px) rotate(0deg);
-    }
-    50% {
-        transform: rotate(180deg) translateX(160px) rotate(-180deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(240px) rotate(-360deg);
-    }
-}
-
-@keyframes resize {
-    0%, 100% {
-        width: 20px;
-        height: 20px;
-    }
-    50% {
-        width: 40px;
-        height: 40px;
-    }
+@keyframes grow-shrink {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); }
 }
 
 .version-indicator {
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     right: 10px;
-    color: #272727;
     font-size: 12px;
+    color: white;
 }
