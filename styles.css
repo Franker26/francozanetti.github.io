@@ -155,7 +155,7 @@ body {
 .social-buttons {
     display: flex;
     justify-content: center;
-    gap: 17px; /* Espaciado entre los botones */
+    gap: 22px; /* Espaciado entre los botones */
     margin-bottom: 20px; /* Espacio entre los botones y la siguiente sección */
 }
 
