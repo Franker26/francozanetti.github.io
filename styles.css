@@ -235,3 +235,12 @@ body {
 .card p {
     margin: 6px 0;  /* Reducir espacio entre párrafos */
 }
+
+.download-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.download-button.disabled:hover {
+    transform: none; /* Evitar que haga zoom al pasar el cursor */
+}
