@@ -246,3 +246,47 @@ body {
 .download-button.disabled:hover {
     transform: none; /* Evitar que haga zoom al pasar el cursor */
 }
+
+/* ---------------------------------------- */
+/* Media Queries para pantallas pequeñas (móviles) */
+/* ---------------------------------------- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Apilar barra lateral y contenido principal */
+        padding: 15px; /* Reducir padding */
+    }
+
+    .sidebar {
+        width: 100%; /* Hacer que la barra lateral ocupe el ancho completo */
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .card {
+        max-width: 100%; /* Asegurarse de que las tarjetas ocupen el 100% del ancho */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h3 {
+        font-size: 18px; /* Ajustar tamaño del texto */
+    }
+
+    p {
+        font-size: 14px; /* Ajustar tamaño del texto */
+    }
+
+    .download-button {
+        top: 10px;
+        right: 10px;
+    }
+
+    .download-button img {
+        width: 20px;
+        height: 20px;
+    }
+}
